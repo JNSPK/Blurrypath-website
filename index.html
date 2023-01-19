@@ -14,19 +14,38 @@
     />
   </head>
   <body>
-    <div class="navbar">
-      <div class="logo">
-        <img class="imglogo" src="IMG/Logo blurrypath.png" alt="Blurrypath" />
-      </div>
+    <header id="top" class="welcome">
+      <img class="imglogo" src="IMG/Logo blurrypath.png" alt="Blurrypath" />
+    </header>
+    <nav class="navbar" id="navbar">
       <div class="menu">
-        <div class="button"><a href="index.html">Home</a></div>
-        <div class="button"><a href="news.asp">About</a></div>
-        <div class="button"><a href="contact.asp">Work </a></div>
-        <div class="button"><a href="contact.asp">Social</a></div>
+        <div class="button">
+          <a href="#top">Home</a>
+        </div>
+        <div class="button">
+          <a href="#About">About</a>
+        </div>
+        <div class="button">
+          <a href="#Work">Work </a>
+        </div>
+        <div class="button">
+          <a href="#Social">Social</a>
+        </div>
+      </div>
+    </nav>
+    <div class="main">
+      <div class="scroll-page" id="About">
+        <h1>Flou autistique</h1>
+        Blurrypath est né de mon amour pour le mouvement et l'antinomie de le
+        figer dans le temps
+      </div>
+      <div class="scroll-page" id="Work">
+        Ceci est un texte temporaire inutile 2
+      </div>
+      <div class="scroll-page" id="Social">
+        Ceci est un texte temporaire inutile 3
       </div>
     </div>
-    <div class="container">
-      <p>Ceci est un texte temporaire inutile</p>
-    </div>
+    <script src="Animations.js"></script>
   </body>
 </html>
