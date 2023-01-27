@@ -5,7 +5,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-family: "Bitter";
+  font-family: 'Bitter';
   background-image: url(../IMG/Background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,6 +20,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 90vh;
+  perspective: 1000px;
 }
 
 .navbar {
@@ -46,6 +47,7 @@ body {
 .imglogo {
   position: absolute;
   max-height: 30vh;
+  transform-style: preserve-3d;
 }
 .menu {
   display: flex;
