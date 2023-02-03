@@ -148,3 +148,31 @@ a:hover {
   width: 5rem;
   height: 5rem;
 }
+
+@media (max-width: 500px) and (orientation: portrait) {
+  html {
+    height: -webkit-fill-available;
+  }
+
+  body {
+    font-size: small;
+  }
+  .titres {
+    top: 10%;
+  }
+  .socialcontent {
+    top: 10%;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  body {
+    font-size: small;
+  }
+  .titres {
+    top: 5%;
+  }
+  .socialcontent {
+    top: 5%;
+  }
+}
