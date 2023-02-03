@@ -3,7 +3,7 @@ window.onscroll = function () {
   stickyNav();
 };
 document.addEventListener('touchmove', stickyNav, false);
-document.addEventListener('scroll', stickyNav, false);
+// document.addEventListener('scroll', stickyNav, false);
 
 // Get the navbar
 const navbar = document.querySelector('#navbar');
