@@ -21,6 +21,7 @@ body {
   background-attachment: fixed;
   overflow: scroll;
   -ms-overflow-style: none; /* IE and Edge */
+  height: 100vh;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -152,10 +153,14 @@ a:hover {
 @media (max-width: 500px) and (orientation: portrait) {
   html {
     height: -webkit-fill-available;
+    height: fill;
   }
 
   body {
     font-size: small;
+  }
+  .welcome {
+    perspective: 500px;
   }
   .titres {
     top: 10%;
@@ -166,8 +171,15 @@ a:hover {
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
+  html {
+    height: -webkit-fill-available;
+    height: fill;
+  }
   body {
     font-size: small;
+  }
+  .welcome {
+    perspective: 100px;
   }
   .titres {
     top: 5%;
