@@ -152,12 +152,13 @@ a:hover {
 
 @media (max-width: 500px) and (orientation: portrait) {
   html {
-    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
     height: fill;
   }
 
   body {
     font-size: small;
+    min-height: -webkit-fill-available;
   }
   .welcome {
     perspective: 500px;
@@ -172,10 +173,11 @@ a:hover {
 
 @media (max-width: 900px) and (orientation: landscape) {
   html {
-    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
     height: fill;
   }
   body {
+    min-height: -webkit-fill-available;
     font-size: small;
   }
   .welcome {
