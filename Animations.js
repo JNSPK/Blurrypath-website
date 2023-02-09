@@ -2,8 +2,13 @@
 window.onscroll = function () {
   stickyNav();
 };
-document.addEventListener('touchmove', stickyNav, false);
-// document.addEventListener('scroll', stickyNav, false);
+document.addEventListener(
+  'touchmove',
+  (e) => {
+    stickyNav;
+  },
+  false
+);
 
 // Get the navbar
 const navbar = document.querySelector('#navbar');
@@ -22,6 +27,21 @@ function stickyNav() {
     main.classList.remove('fixed');
   }
 }
+
+// Burger menu MQ
+
+// Get burger btn
+
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.menu');
+
+function burgerMenu() {
+  burger.addEventListener('click', () => {
+    menu.classList.toggle('visible');
+  });
+}
+
+burgerMenu();
 
 // Animation logo
 
