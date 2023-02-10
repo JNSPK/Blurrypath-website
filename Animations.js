@@ -3,7 +3,7 @@ window.onscroll = function () {
   stickyNav();
 };
 document.addEventListener(
-  'touchmove',
+  'touchstart',
   (e) => {
     stickyNav;
   },
@@ -65,3 +65,20 @@ container.addEventListener('mouseleave', (e) => {
   logo.style.transition = 'all 350ms ease-out';
   logo.style.transform = `rotateX(0deg) rotateY(0deg)`;
 });
+
+//Animation photo plein ecran
+
+const modalContainer = document.querySelector('.modal-container');
+const modalTriggers = document.querySelectorAll('.modal-trigger');
+
+modalTriggers.forEach(
+  (trigger) =>
+    (trigger.onclick = () => {
+      document.querySelector('.modal img').src = trigger.getAttribute('src');
+      toggleModal();
+    })
+);
+
+function toggleModal() {
+  modalContainer.classList.toggle('active');
+}

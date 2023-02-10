@@ -11,9 +11,9 @@ body {
   line-height: 3rem;
   text-align-last: center;
   -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  -webkit-touch-callout: none; /*Safari ios*/
+  -moz-user-select: none; /*Firefox*/
+  -ms-user-select: none; /*Microsoft*/
   user-select: none;
   background-image: url(../IMG/Background.jpg);
   background-repeat: no-repeat;
@@ -40,7 +40,10 @@ body::-webkit-scrollbar {
   perspective: 1000px;
 }
 .imglogo {
-  max-height: 30vh;
+  max-height: 20vh;
+}
+.landscape-deactivated {
+  display: none;
 }
 .navbar {
   display: flex;
@@ -89,7 +92,7 @@ a:hover {
   width: 100%;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
 
@@ -104,7 +107,6 @@ a:hover {
   background-color: rgb(194, 100, 114, 0.37);
   color: rgb(233, 223, 223);
   font-weight: 200;
-
   scroll-snap-align: center;
 }
 .fixed {
@@ -122,9 +124,11 @@ a:hover {
 }
 #Work {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
+  gap: 10px;
 }
 
 #Social {
@@ -146,6 +150,63 @@ a:hover {
   top: 20%;
   padding: 5%;
 }
+
+.modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal-container.active {
+  display: block;
+}
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background: #333333d3;
+}
+.modal img {
+  max-height: 60%;
+  max-width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid antiquewhite;
+  z-index: 10;
+}
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  gap: 15px;
+}
+.image-container .image {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 3px solid antiquewhite;
+  box-shadow: 10px 10px 20px rgba(26, 25, 25, 0.596);
+  overflow: hidden;
+}
+.image-container .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+  opacity: 0.5;
+}
+.image-container .image:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
 .iconlink {
   width: 5rem;
   height: 5rem;
@@ -165,7 +226,7 @@ a:hover {
     min-height: -webkit-fill-available;
   }
   .welcome {
-    perspective: 500px;
+    perspective: 700px;
   }
   .titres {
     top: 10%;
@@ -186,9 +247,17 @@ a:hover {
     left: -100vw;
     transition: all 0.7s ease;
   }
+  .menu a {
+    color: transparent;
+    transition: color 2s ease;
+  }
   .menu.visible {
     left: 0;
     height: 100%;
+  }
+
+  .menu.visible a {
+    color: antiquewhite;
   }
   .burger {
     display: flex;
@@ -207,55 +276,36 @@ a:hover {
     width: 50%;
   }
 }
+@media (max-width: 490px) and (orientation: portrait) {
+  .image-container .image {
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    border: 3px solid antiquewhite;
+    box-shadow: 10px 10px 20px rgba(26, 25, 25, 0.596);
+    overflow: hidden;
+  }
+}
 
-@media (max-width: 900px) and (orientation: landscape) {
-  html {
-    min-height: -webkit-fill-available;
-    height: fill;
-  }
-  body {
-    min-height: -webkit-fill-available;
-    font-size: small;
-  }
+@media only screen and (orientation: landscape) {
   .welcome {
-    perspective: 100px;
-  }
-  .titres {
-    top: 5%;
-  }
-  .socialcontent {
-    top: 5%;
-  }
-  .navbar {
     display: flex;
-    position: relative;
-    align-items: center;
-    top: 0;
-  }
-
-  .menu {
-    position: relative;
-    left: -100vw;
-    transition: all 0.7s ease;
-  }
-  .menu.visible {
-    left: 0;
-    padding: 0;
-  }
-  .burger {
-    display: flex;
-    position: relative;
-    z-index: 1;
-    background-color: transparent;
-    border: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    left: 0;
-    cursor: pointer;
-    height: 100%;
-    max-width: 20%;
+    height: 100vh;
+    line-height: 3rem;
+    gap: 2em;
+    color: antiquewhite;
+    font-size: small;
   }
-  .burgerimg {
-    width: 50%;
+  .container {
+    display: none;
+  }
+  .landscape-deactivated {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 }
